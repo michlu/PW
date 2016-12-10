@@ -15,7 +15,7 @@ public class Miner {
             new JButtonMiner(9,2), new JButtonMiner(1,3), new JButtonMiner(6,3),
             new JButtonMiner(8,4), new JButtonMiner(5,5), new JButtonMiner(10,9),
             new JButtonMiner(4,12), new JButtonMiner(8,13), new JButtonMiner(4,14),
-            new JButtonMiner(13,7), new JButtonMiner(6,7), new JButtonMiner(5,10),
+            new JButtonMiner(13,7), new JButtonMiner(6,7), new JButtonMiner(14,14)
     };
 
     public static void main(String[] args) {
@@ -52,7 +52,8 @@ public class Miner {
 
         @Override
         public void actionPerformed(ActionEvent event) {
-
+            iloscStrzalow++;
+            frame.setTitle("Miner - ilosc strzalow "+iloscStrzalow);
             JButtonMiner button = (Miner.JButtonMiner) event.getSource();
 
             for(JButtonMiner mina : miny){
@@ -66,17 +67,13 @@ public class Miner {
                             null, JOptionPane.WARNING_MESSAGE,
                             JOptionPane.OK_OPTION, null, null, null);
                     System.exit(1);
-                    break;
                 }
                 else {
-                    iloscStrzalow++;
-                    frame.setTitle("Miner - ilosc strzalow "+iloscStrzalow);
-                    System.out.println("Grasz dalej! Ilosc strzałow: " + iloscStrzalow);
                     button.setEnabled(false);
                     button.setBackground(Color.GREEN);
-                    break;
                 }
             }
+            System.out.println("Grasz dalej! Ilosc strzałow: " + iloscStrzalow);
         }
     }
     public class JButtonMiner extends JButton {
