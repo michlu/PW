@@ -1,0 +1,8 @@
+.root{
+    -fx-text-fill: black;
+}
+#officePlanPane{
+    -fx-background-image: url("officePlan.png");
+    -fx-background-repeat: stretch;
+    -fx-background-position: 5px center;
+}

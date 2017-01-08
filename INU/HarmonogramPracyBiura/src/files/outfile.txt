@@ -1,0 +1,10 @@
+﻿Maciej Woźniak 1 1000 1600
+Kamilia Kamińska 2 800 1600
+Adam Łukasik 3 800 1630
+Antonina Kwiatkowska 4 900 1200
+Kacper Musiał 5 700 1800
+Mikołaj Lewandowski 6 800 1800
+Kacper Kędzierski 7 830 1800
+Zofia Szymańska 8 930 1900
+Amanda Kowalska 9 1000 2000
+Zuzanna Jabłońska 10 1400 2200
