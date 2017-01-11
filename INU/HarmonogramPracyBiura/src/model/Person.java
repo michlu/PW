@@ -1,5 +1,8 @@
 package model;
 
+import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
+
 /**
  * @author Michlu
  * @sience 2017-01-07
@@ -9,7 +12,7 @@ public class Person {
     private String nazwisko;
     private String pokoj;
     private String pracujeOd;
-    private String pracujeDo;
+    private String  pracujeDo;
 
     public Person(String imie, String nazwisko, String pokoj, String pracujeOd, String pracujeDo) {
         this.imie = imie;
@@ -61,11 +64,13 @@ public class Person {
 
     public int podajCzasPracy(){
         int czasPracy;
-        if(Integer.parseInt(pracujeDo)-Integer.parseInt(pracujeOd)<=0){
+        String a = pracujeDo.replace(":", "");
+        String b = pracujeOd.replace(":", "");
+        if(Integer.parseInt(a)-Integer.parseInt(b)<=0){
             czasPracy=0;
         }
         else{
-            czasPracy=Integer.parseInt(pracujeDo)-Integer.parseInt(pracujeOd);
+            czasPracy=Integer.parseInt(a)-Integer.parseInt(b);
         }
         return czasPracy;
     }

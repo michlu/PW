@@ -1,5 +1,6 @@
 package model;
 
+import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.scene.control.TextField;
 import javafx.stage.FileChooser;
@@ -7,6 +8,7 @@ import javafx.stage.Stage;
 
 import java.io.File;
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * @author Michlu
@@ -25,7 +27,7 @@ public class Model {
         FileChooser fileChooser = new FileChooser();
         fileChooser.setTitle(tytulOkna);
         // katalog otwierania (tam gdzie jest plik klasy)
-        String currentDir = System.getProperty("user.dir") + File.separator;
+        String currentDir = System.getProperty("user.dir") + File.separator + "src" + File.separator + "files";
         File file = new File(currentDir);
         fileChooser.setInitialDirectory(file);
         fileChooser.getExtensionFilters().add(new FileChooser.ExtensionFilter("Plik tekstowy", "*.txt"));
@@ -41,8 +43,8 @@ public class Model {
         return selectedFile;
     }
 
-    public static ArrayList<Person> generujRaport(ObservableList<Person> personList) {
-        ArrayList<Person> posortowanaLista = new ArrayList<>(personList);
+    public static ObservableList<Person> generujRaport(ObservableList<Person> personList) {
+        ObservableList<Person> posortowanaLista = FXCollections.observableArrayList(personList);
         int a;
         int b;
         Person c;
@@ -71,7 +73,7 @@ public class Model {
 
     public static void onlyNumberTextField(TextField textField) {
         textField.textProperty().addListener((observable, oldValue, newValue) -> {
-            if (!newValue.matches("[0-9]*")) {
+            if (!newValue.matches("[0-9:]*")) {
                 textField.setText(oldValue);
             }
         });

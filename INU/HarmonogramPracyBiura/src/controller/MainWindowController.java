@@ -24,7 +24,9 @@ public class MainWindowController {
     @FXML
     private TableView<Person> mainTableView;
     @FXML
-    private TableColumn<Person, String> imieColumn, nazwiskoColumn, pokojColumn, odgodzColumn, dogodziColumn;
+    private TableColumn<Person, String> imieColumn, nazwiskoColumn, pokojColumn;
+    @FXML
+    private TableColumn<Person, String> odgodzColumn, dogodziColumn;
     @FXML
     private TextField imieTextField, nazwiskoTextField, pokojTextField, odgodzTextField, dogodzTextField;
     @FXML
@@ -260,6 +262,16 @@ public class MainWindowController {
     @FXML
     public void zapiszRaportDoPliku(){
         zapiszPlik(Model.generujRaport(personList));
+    }
+
+    @FXML
+    public void generujRaportDoTabeli(){
+        resetField();
+        ObservableList<Person> copy = Model.generujRaport(personList);
+        personList.remove(0, personList.size());
+        personList.setAll(copy);
+//        personList = FXCollections.observableArrayList(copy);
+        mainTableView.refresh();
     }
 }
 
