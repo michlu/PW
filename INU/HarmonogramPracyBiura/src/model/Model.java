@@ -7,8 +7,6 @@ import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 
 import java.io.File;
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * @author Michlu
@@ -43,33 +41,31 @@ public class Model {
         return selectedFile;
     }
 
-    public static ObservableList<Person> generujRaport(ObservableList<Person> personList) {
-        ObservableList<Person> posortowanaLista = FXCollections.observableArrayList(personList);
-        int a;
-        int b;
-        Person c;
-        Person d;
-        for (int i = 0; i < posortowanaLista.size(); i++) {
-            for (int j = 0; j < posortowanaLista.size() - i-1; j++) {
-                a = posortowanaLista.get(j).podajCzasPracy();
-                b = posortowanaLista.get(j+1).podajCzasPracy();
+    public static ObservableList<Person> generateReport(ObservableList<Person> personList) {
+        ObservableList<Person> sortedList = FXCollections.observableArrayList(personList);
+        int aPersonTimeWork;
+        int bPersonTimeWork;
+        Person aPeron;
+        Person bPerson;
+        for (int i = 0; i < sortedList.size(); i++) {
+            for (int j = 0; j < sortedList.size() - i-1; j++) {
+                aPersonTimeWork = sortedList.get(j).podajCzasPracy();
+                bPersonTimeWork = sortedList.get(j+1).podajCzasPracy();
 
-                c = posortowanaLista.get(j);
-                d = posortowanaLista.get(j+1);
+                aPeron = sortedList.get(j);
+                bPerson = sortedList.get(j+1);
 
-                if (a < b) {
-                    Person temp = d;
-                    posortowanaLista.set(j+1, c);
-                    posortowanaLista.set(j, temp);
+                if (aPersonTimeWork < bPersonTimeWork) {
+                    sortedList.set(j+1, aPeron);
+                    sortedList.set(j, bPerson);
                 }
             }
         }
-        for (Person person : posortowanaLista ) {
+        for (Person person : sortedList ) {
             System.out.println("Raport: " + person.toString());
         }
-        return posortowanaLista;
+        return sortedList;
     }
-
 
     public static void onlyNumberTextField(TextField textField) {
         textField.textProperty().addListener((observable, oldValue, newValue) -> {

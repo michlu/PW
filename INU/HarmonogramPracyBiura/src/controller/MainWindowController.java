@@ -261,17 +261,30 @@ public class MainWindowController {
 
     @FXML
     public void zapiszRaportDoPliku(){
-        zapiszPlik(Model.generujRaport(personList));
+        zapiszPlik(Model.generateReport(personList));
     }
 
     @FXML
     public void generujRaportDoTabeli(){
         resetField();
-        ObservableList<Person> copy = Model.generujRaport(personList);
+        ObservableList<Person> copy = Model.generateReport(personList);
         personList.remove(0, personList.size());
         personList.setAll(copy);
-//        personList = FXCollections.observableArrayList(copy);
         mainTableView.refresh();
+    }
+
+    @FXML
+    public void usunOsobe(){
+        try{
+            Person uPerson = new Person(imieTextField.getText(), nazwiskoTextField.getText(), pokojTextField.getText(), odgodzTextField.getText(), dogodzTextField.getText());
+            int indexDelete = personList.indexOf(uPerson);
+            if(indexDelete != -1)
+                System.out.println("Usunięto osobe (" + (indexDelete+1) + "): " + uPerson.toString());
+                personList.remove(indexDelete);
+        }
+        catch (RuntimeException e){
+        }
+
     }
 }
 

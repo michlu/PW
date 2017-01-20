@@ -2,6 +2,7 @@ package model;
 
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
+import java.util.Comparator;
 
 /**
  * @author Michlu

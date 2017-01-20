@@ -35,31 +35,56 @@
       </MenuBar>
    </top>
    <right>
-      <VBox prefHeight="376.0" prefWidth="148.0" spacing="20.0" BorderPane.alignment="CENTER">
+      <VBox prefHeight="376.0" prefWidth="148.0" BorderPane.alignment="CENTER">
          <children>
-            <TextField fx:id="imieTextField" promptText="Imie">
+            <Label text="Imie:">
                <VBox.margin>
-                  <Insets left="5.0" right="5.0" top="65.0" />
+                  <Insets top="40.0" />
+               </VBox.margin>
+            </Label>
+            <TextField fx:id="imieTextField" promptText="Podaj imie">
+               <VBox.margin>
+                  <Insets />
                </VBox.margin>
             </TextField>
-            <TextField fx:id="nazwiskoTextField" promptText="Nazwisko">
+            <Label text="Nazwisko:">
                <VBox.margin>
-                  <Insets left="5.0" right="5.0" />
+                  <Insets top="10.0" />
+               </VBox.margin>
+            </Label>
+            <TextField fx:id="nazwiskoTextField" promptText="Poda nazwisko">
+               <VBox.margin>
+                  <Insets />
                </VBox.margin>
             </TextField>
-            <TextField fx:id="pokojTextField" promptText="Nr. pokoju">
+            <Label text="Nr. pokoju:">
                <VBox.margin>
-                  <Insets left="5.0" right="5.0" />
+                  <Insets top="10.0" />
+               </VBox.margin>
+            </Label>
+            <TextField fx:id="pokojTextField" promptText="Podaj nr. pokoju">
+               <VBox.margin>
+                  <Insets />
                </VBox.margin>
             </TextField>
-            <TextField fx:id="odgodzTextField" promptText="Od godziny">
+            <Label text="Od godziny:">
                <VBox.margin>
-                  <Insets left="5.0" right="5.0" />
+                  <Insets top="10.0" />
+               </VBox.margin>
+            </Label>
+            <TextField fx:id="odgodzTextField" promptText="Podaj godzine">
+               <VBox.margin>
+                  <Insets />
                </VBox.margin>
             </TextField>
-            <TextField fx:id="dogodzTextField" promptText="Do godziny">
+            <Label text="Do godziny:">
                <VBox.margin>
-                  <Insets left="5.0" right="5.0" />
+                  <Insets top="10.0" />
+               </VBox.margin>
+            </Label>
+            <TextField fx:id="dogodzTextField" promptText="Podaj godzine">
+               <VBox.margin>
+                  <Insets />
                </VBox.margin>
             </TextField>
             <Label fx:id="alertLabel" text="WYPEŁNIJ WSZYSTKIE POLA" textFill="RED" visible="false">
@@ -67,20 +92,28 @@
                   <Font name="System Bold" size="10.0" />
                </font>
                <VBox.margin>
-                  <Insets left="5.0" />
+                  <Insets bottom="5.0" left="5.0" top="5.0" />
                </VBox.margin>
             </Label>
             <Button mnemonicParsing="false" onAction="#dodajOsobe" prefHeight="50.0" prefWidth="100.0" text="Dodaj">
                <VBox.margin>
-                  <Insets left="25.0" right="5.0" />
+                  <Insets left="20.0" />
+               </VBox.margin>
+            </Button>
+            <Button mnemonicParsing="false" onAction="#usunOsobe" prefWidth="100.0" text="Usuń">
+               <VBox.margin>
+                  <Insets left="20.0" top="5.0" />
                </VBox.margin>
             </Button>
             <Button mnemonicParsing="false" onAction="#resetField" prefWidth="100.0" text="Reset">
                <VBox.margin>
-                  <Insets left="25.0" />
+                  <Insets left="20.0" top="5.0" />
                </VBox.margin>
             </Button>
          </children>
+         <padding>
+            <Insets left="5.0" right="5.0" />
+         </padding>
       </VBox>
    </right>
    <center>
