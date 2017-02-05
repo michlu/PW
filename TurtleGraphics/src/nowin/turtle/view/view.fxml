@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Group?>
+<?import javafx.scene.canvas.Canvas?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<AnchorPane fx:id="anchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="nowin.turtle.controller.TurtleController">
+   <children>
+      <Canvas fx:id="canvas" height="600.0" layoutX="130.0" layoutY="224.0" width="870.0" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+      <ToolBar orientation="VERTICAL" prefHeight="600.0" prefWidth="130.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <items>
+          <Button mnemonicParsing="false" onAction="#loadData" prefWidth="120.0" text="Wczytaj dane" />
+            <TextArea fx:id="textArea" prefHeight="300.0" prefWidth="110.0" wrapText="true" />
+            <HBox alignment="CENTER">
+               <children>
+                  <Button mnemonicParsing="false" onAction="#readInstructions" prefHeight="50.0" text="Wykonaj" />
+                  <Button mnemonicParsing="false" onAction="#clearTextArea" prefHeight="50.0" text="Czyść">
+                     <HBox.margin>
+                        <Insets left="10.0" />
+                     </HBox.margin>
+                  </Button>
+               </children>
+               <padding>
+                  <Insets bottom="15.0" />
+               </padding>
+            </HBox>
+            <GridPane prefWidth="120.0">
+              <columnConstraints>
+                <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Button mnemonicParsing="false" onAction="#penUpbtn" prefWidth="100.0" text="podnies" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                  <Button mnemonicParsing="false" onAction="#moveBtn" prefWidth="100.0" text="naprzod" GridPane.columnIndex="1" />
+                  <Button mnemonicParsing="false" onAction="#rotateBtn" prefWidth="100.0" text="obroc" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <TextField fx:id="moveTxt" />
+                  <TextField fx:id="rotateTxt" GridPane.rowIndex="1" />
+                  <Button mnemonicParsing="false" onAction="#penDownBtn" prefWidth="100.0" text="opusc" GridPane.rowIndex="2" />
+                  <TextField fx:id="colorTxt" GridPane.rowIndex="3" />
+                  <Button mnemonicParsing="false" onAction="#colorBtn" prefWidth="100.0" text="kolor" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+               </children>
+               <padding>
+                  <Insets bottom="20.0" />
+               </padding>
+            </GridPane>
+            <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#resetBtn" prefWidth="120.0" text="RESET" textFill="RED" />
+        </items>
+      </ToolBar>
+      <Group fx:id="turtle" layoutX="550.0" layoutY="300.0">
+         <children>
+            <ImageView>
+               <image>
+                  <Image url="@turtle_icon.png" />
+               </image>
+            </ImageView>
+         </children>
+      </Group>
+   </children>
+</AnchorPane>

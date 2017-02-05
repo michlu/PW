@@ -1,0 +1,5 @@
+
+#anchorPane{
+    -fx-background-image: url("sand_texture.jpg");
+    -fx-background-repeat: repeat;
+}
